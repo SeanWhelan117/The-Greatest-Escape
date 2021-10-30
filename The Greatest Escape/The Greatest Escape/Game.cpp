@@ -89,7 +89,7 @@ void Game::processGameEvents(sf::Event& event)
 void Game::update(double dt)
 {
 
-
+	menu.update();
 	
 
 }

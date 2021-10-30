@@ -33,6 +33,12 @@ void MainMenu::loadAssets()
 
 void MainMenu::update()
 {
+	mousePos = sf::Mouse::getPosition();
+
+	std::cout << "Mouse Position x = " << mousePos.x << " Mouse Position y = " << mousePos.y << std::endl;
+
+	mouseButtonCollision(mousePos);
+
 }
 
 void MainMenu::render(sf::RenderWindow& t_window)
@@ -80,7 +86,7 @@ void MainMenu::setupButtonText()
 	m_buttonThreeText.setString("Options");
 
 	
-	//button 3 setup
+	//button 4 setup
 
 	m_buttonFourText.Bold;
 	m_buttonFourText.setFont(m_font);
@@ -89,4 +95,86 @@ void MainMenu::setupButtonText()
 	m_buttonFourText.setFillColor(sf::Color::Black);
 	m_buttonFourText.setString("Exit Game");
 	 
+}
+
+void MainMenu::mouseButtonCollision(sf::Vector2i t_mousePos)
+{
+	if (t_mousePos.x < 770 && t_mousePos.x > 570) //just a check that the mouse is within the same x coords as all buttons
+	{
+		if (t_mousePos.y > 285 && t_mousePos.y < 335)
+		{
+			buttons[0].setFillColor(sf::Color::Yellow);
+			buttons[0].setScale(1.25, 1.25);
+			m_buttonOneText.setScale(1.25, 1.25);
+
+			if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+			{
+				std::cout << "Play pressed" << std::endl;
+
+			}
+		}
+		else if (t_mousePos.y > 400 && t_mousePos.y < 450)
+		{
+			buttons[1].setFillColor(sf::Color::Yellow);
+			buttons[1].setScale(1.25, 1.25);
+			m_buttonTwoText.setScale(1.25, 1.25);
+
+			if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+			{
+				std::cout << "Instructions pressed" << std::endl;
+			}
+
+
+		}
+		else if (t_mousePos.y > 525 && t_mousePos.y < 575)
+		{
+			buttons[2].setFillColor(sf::Color::Yellow);
+			buttons[2].setScale(1.25, 1.25);
+			m_buttonThreeText.setScale(1.25, 1.25);
+
+			if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+			{
+				std::cout << "Choose stuff pressed" << std::endl;
+			}
+
+		}
+		else if (t_mousePos.y > 645 && t_mousePos.y < 695)
+		{
+			buttons[3].setFillColor(sf::Color::Yellow);
+			buttons[3].setScale(1.25, 1.25);
+			m_buttonFourText.setScale(1.25, 1.25);
+
+			if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+			{
+				std::cout << "End Game pressed" << std::endl;
+			}
+		}
+		else
+		{
+			for (int i = 0; i < MAX_BUTTONS; i++)
+			{
+				buttons[i].setFillColor(sf::Color::Red);
+				buttons[i].setScale(1, 1);
+			}
+
+			m_buttonOneText.setScale(1, 1);
+			m_buttonTwoText.setScale(1, 1);
+			m_buttonThreeText.setScale(1, 1);
+			m_buttonFourText.setScale(1, 1);
+
+		}
+
+	}
+	else
+	{
+		for (int i = 0; i < MAX_BUTTONS; i++)
+		{
+			buttons[i].setFillColor(sf::Color::Red);
+			buttons[i].setScale(1, 1);
+		}
+		m_buttonOneText.setScale(1, 1);
+		m_buttonTwoText.setScale(1, 1);
+		m_buttonThreeText.setScale(1, 1);
+		m_buttonFourText.setScale(1, 1);
+	}
 }
