@@ -110,7 +110,6 @@ void MainMenu::mouseButtonCollision(sf::Vector2i t_mousePos)
 			if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
 			{
 				std::cout << "Play pressed" << std::endl;
-
 			}
 		}
 		else if (t_mousePos.y > 400 && t_mousePos.y < 450)
@@ -151,30 +150,26 @@ void MainMenu::mouseButtonCollision(sf::Vector2i t_mousePos)
 		}
 		else
 		{
-			for (int i = 0; i < MAX_BUTTONS; i++)
-			{
-				buttons[i].setFillColor(sf::Color::Red);
-				buttons[i].setScale(1, 1);
-			}
-
-			m_buttonOneText.setScale(1, 1);
-			m_buttonTwoText.setScale(1, 1);
-			m_buttonThreeText.setScale(1, 1);
-			m_buttonFourText.setScale(1, 1);
-
+			resetButtons();
 		}
 
 	}
 	else
 	{
-		for (int i = 0; i < MAX_BUTTONS; i++)
-		{
-			buttons[i].setFillColor(sf::Color::Red);
-			buttons[i].setScale(1, 1);
-		}
-		m_buttonOneText.setScale(1, 1);
-		m_buttonTwoText.setScale(1, 1);
-		m_buttonThreeText.setScale(1, 1);
-		m_buttonFourText.setScale(1, 1);
+		resetButtons();
 	}
+}
+
+
+void MainMenu::resetButtons()
+{
+	for (int i = 0; i < MAX_BUTTONS; i++)
+	{
+		buttons[i].setFillColor(sf::Color::Red);
+		buttons[i].setScale(1, 1);
+	}
+	m_buttonOneText.setScale(1, 1);
+	m_buttonTwoText.setScale(1, 1);
+	m_buttonThreeText.setScale(1, 1);
+	m_buttonFourText.setScale(1, 1);
 }

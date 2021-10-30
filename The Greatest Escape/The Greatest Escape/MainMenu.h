@@ -20,6 +20,8 @@ private:
 
 	void mouseButtonCollision(sf::Vector2i t_mousePos);
 
+	void resetButtons();
+
 	static const int MAX_BUTTONS = 4;
 	sf::RectangleShape buttons[MAX_BUTTONS]; // buttons array for menu buttons
 
