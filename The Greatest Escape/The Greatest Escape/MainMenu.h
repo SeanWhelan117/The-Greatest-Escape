@@ -16,8 +16,19 @@ public:
 
 private:
 
+	void setupButtonText();
+
 	static const int MAX_BUTTONS = 4;
 	sf::RectangleShape buttons[MAX_BUTTONS]; // buttons array for menu buttons
+
+	sf::Font m_font; // arial.ttf font
+
+	//text for each button stating what they are
+
+	sf::Text m_buttonOneText;
+	sf::Text m_buttonTwoText;
+	sf::Text m_buttonThreeText;
+	sf::Text m_buttonFourText;
 
 };
 
