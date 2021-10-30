@@ -35,7 +35,7 @@ void MainMenu::update()
 {
 	mousePos = sf::Mouse::getPosition();
 
-	std::cout << "Mouse Position x = " << mousePos.x << " Mouse Position y = " << mousePos.y << std::endl;
+	//std::cout << "Mouse Position x = " << mousePos.x << " Mouse Position y = " << mousePos.y << std::endl;
 
 	mouseButtonCollision(mousePos);
 
