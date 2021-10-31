@@ -93,6 +93,13 @@ void Game::update(double dt)
 		menu.update(gameState);
 	}
 
+
+
+
+	if (gameState == GameState::endGame)
+	{
+		m_window.close();
+	}
 }
 
 ////////////////////////////////////////////////////////////
@@ -104,6 +111,21 @@ void Game::render()
 	if (gameState == GameState::mainmenu)
 	{
 		menu.render(m_window);
+	}
+
+	if (gameState == GameState::gameplay)
+	{
+		m_window.clear(sf::Color::Green);
+	}
+
+	if (gameState == GameState::instructions)
+	{
+		m_window.clear(sf::Color::Red);
+	}
+
+	if (gameState == GameState::options)
+	{
+		m_window.clear(sf::Color::Magenta);
 	}
 
 	m_window.display();
