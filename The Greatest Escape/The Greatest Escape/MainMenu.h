@@ -2,6 +2,9 @@
 #include <SFML\Graphics.hpp>
 #include <iostream>
 
+#include "GameState.h"
+
+
 class MainMenu
 {
 public:

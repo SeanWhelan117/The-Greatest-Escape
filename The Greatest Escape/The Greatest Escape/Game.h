@@ -3,7 +3,9 @@
 #include <time.h>
 #include <stdlib.h>
 
+#include "GameState.h"
 #include "MainMenu.h"
+
 
 class Game
 {
@@ -15,6 +17,9 @@ public:
 	MainMenu menu;
 
 protected:
+
+	GameState gameState{ GameState::mainmenu };
+
 
 	sf::Font m_font;
 	sf::Text m_gameText;

@@ -88,9 +88,10 @@ void Game::processGameEvents(sf::Event& event)
 ////////////////////////////////////////////////////////////
 void Game::update(double dt)
 {
-
-	menu.update();
-	
+	if (gameState == GameState::mainmenu)
+	{
+		menu.update();
+	}
 
 }
 
@@ -99,7 +100,11 @@ void Game::render()
 {
 	m_window.clear(sf::Color::Blue);
 
-	menu.render(m_window);
+
+	if (gameState == GameState::mainmenu)
+	{
+		menu.render(m_window);
+	}
 
 	m_window.display();
 }
