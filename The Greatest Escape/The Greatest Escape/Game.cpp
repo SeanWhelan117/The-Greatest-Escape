@@ -90,7 +90,7 @@ void Game::update(double dt)
 {
 	if (gameState == GameState::mainmenu)
 	{
-		menu.update();
+		menu.update(gameState);
 	}
 
 }

@@ -11,14 +11,14 @@ public:
 	MainMenu();
 	void loadAssets();
 
-	void update();
+	void update(GameState& t_gameState);
 	void render(sf::RenderWindow& t_window);
 
 private:
 
 	void setupButtonText(); // setups font colour all that stuff for the button text
 
-	void mouseButtonCollision(sf::Vector2i t_mousePos); // checks for collision with the mouse and buttons.
+	void mouseButtonCollision(sf::Vector2i t_mousePos, GameState& t_gameState); // checks for collision with the mouse and buttons.
 	//if the mouse is hovering changes that specific button
 	//resets changes when it leaves that button
 	//checks for that buttons click aswell

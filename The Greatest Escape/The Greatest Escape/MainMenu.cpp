@@ -31,13 +31,13 @@ void MainMenu::loadAssets()
 
 }
 
-void MainMenu::update()
+void MainMenu::update(GameState& t_gameState)
 {
 	mousePos = sf::Mouse::getPosition();
 
 	//std::cout << "Mouse Position x = " << mousePos.x << " Mouse Position y = " << mousePos.y << std::endl;
 
-	mouseButtonCollision(mousePos);
+	mouseButtonCollision(mousePos, t_gameState);
 
 }
 
@@ -97,7 +97,7 @@ void MainMenu::setupButtonText()
 	 
 }
 
-void MainMenu::mouseButtonCollision(sf::Vector2i t_mousePos)
+void MainMenu::mouseButtonCollision(sf::Vector2i t_mousePos, GameState& t_gameState)
 {
 	if (t_mousePos.x < 770 && t_mousePos.x > 570) //just a check that the mouse is within the same x coords as all buttons
 	{
@@ -110,6 +110,7 @@ void MainMenu::mouseButtonCollision(sf::Vector2i t_mousePos)
 			if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
 			{
 				std::cout << "Play pressed" << std::endl;
+				t_gameState = GameState::gameplay;
 			}
 		}
 		else if (t_mousePos.y > 400 && t_mousePos.y < 450)
@@ -121,6 +122,7 @@ void MainMenu::mouseButtonCollision(sf::Vector2i t_mousePos)
 			if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
 			{
 				std::cout << "Instructions pressed" << std::endl;
+				t_gameState = GameState::instructions;
 			}
 
 
@@ -133,7 +135,8 @@ void MainMenu::mouseButtonCollision(sf::Vector2i t_mousePos)
 
 			if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
 			{
-				std::cout << "Choose stuff pressed" << std::endl;
+				std::cout << "Options pressed" << std::endl;
+				t_gameState = GameState::options;
 			}
 
 		}
@@ -146,6 +149,7 @@ void MainMenu::mouseButtonCollision(sf::Vector2i t_mousePos)
 			if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
 			{
 				std::cout << "End Game pressed" << std::endl;
+				t_gameState = GameState::endGame;
 			}
 		}
 		else
