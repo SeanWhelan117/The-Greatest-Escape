@@ -14,14 +14,10 @@ Game::Game()
 {
 	m_window.setVerticalSyncEnabled(true);
 
-	/*if (!m_font.loadFromFile("arial.ttf"))
+	if (!m_font.loadFromFile("./ASSETS/FONTS/arial.ttf"))
 	{
 		std::cout << "Error loading font..." << std::endl;
-
-	}*/
-
-
-
+	}
 }
 
 ////////////////////////////////////////////////////////////
@@ -48,7 +44,6 @@ void Game::run()
 		render();
 	}
 
-	//menu.loadAssets();
 }
 
 
@@ -92,8 +87,6 @@ void Game::update(double dt)
 	{
 		menu.update(gameState);
 	}
-
-
 
 
 	if (gameState == GameState::endGame)
