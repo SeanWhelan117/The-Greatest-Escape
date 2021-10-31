@@ -93,6 +93,11 @@ void Game::update(double dt)
 	{
 		m_window.close();
 	}
+
+	if (gameState != GameState::mainmenu && sf::Keyboard::isKeyPressed(sf::Keyboard::Tab))
+	{
+		gameState = GameState::mainmenu;
+	}
 }
 
 ////////////////////////////////////////////////////////////
