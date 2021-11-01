@@ -1,6 +1,8 @@
 #pragma once
 #include <SFML\Graphics.hpp>
 #include <iostream>
+#include <math.h>
+#include <cmath>
 
 
 class Player
@@ -20,6 +22,8 @@ private:
 	sf::Vector2i mousePos; // mouses current position
 
 	void rotatePlayer(sf::Vector2i t_mousePos);
+
+	void checkForPlayerMovement();
 
 };
 
