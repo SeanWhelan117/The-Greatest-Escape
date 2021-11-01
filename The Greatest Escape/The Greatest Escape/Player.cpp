@@ -26,7 +26,7 @@ void Player::update()
 {
 	mousePos = sf::Mouse::getPosition();
 	rotatePlayer(mousePos);
-
+	checkForPlayerMovement();
 
 }
 
@@ -51,7 +51,7 @@ void Player::rotatePlayer(sf::Vector2i t_mousePos)
 	float dx = playerPos.x - t_mousePos.x;
 	float dy = playerPos.y - t_mousePos.y;
 
-	float rotation = (-atan2(dx,dy)) * 180 / 3.14159;
+	float rotation = (-atan2(dx,dy)) * 180 / PI;
 
 	m_player.setRotation(rotation + 180);
 
@@ -60,6 +60,31 @@ void Player::rotatePlayer(sf::Vector2i t_mousePos)
 void Player::checkForPlayerMovement()
 {
 
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
+	{
+		m_player.move(0, -speed);
+	}
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
+	{
+		m_player.move(-speed, 0);
+	}
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
+	{
+		m_player.move(0, speed);
+	}
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
+	{
+		m_player.move(speed, 0);
+	}
+
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::LShift))
+	{
+		speed = 1;
+	}
+	else
+	{
+		speed = 0.5;
+	}
 
 }
 

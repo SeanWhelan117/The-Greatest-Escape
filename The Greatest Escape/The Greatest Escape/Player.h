@@ -20,6 +20,9 @@ private:
 	sf::Texture m_playerTexture;
 
 	sf::Vector2i mousePos; // mouses current position
+	const double PI = 3.141592654;
+
+	float speed = 0.5f;
 
 	void rotatePlayer(sf::Vector2i t_mousePos);
 
