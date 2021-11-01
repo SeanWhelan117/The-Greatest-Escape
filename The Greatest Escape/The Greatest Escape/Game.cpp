@@ -98,6 +98,11 @@ void Game::update(double dt)
 	{
 		gameState = GameState::mainmenu;
 	}
+
+	if (gameState == GameState::gameplay)
+	{
+		player.update();
+	}
 }
 
 ////////////////////////////////////////////////////////////
@@ -113,7 +118,8 @@ void Game::render()
 
 	if (gameState == GameState::gameplay)
 	{
-		m_window.clear(sf::Color::Green);
+		player.render(m_window);
+		//m_window.clear(sf::Color::Green);
 	}
 
 	if (gameState == GameState::instructions)

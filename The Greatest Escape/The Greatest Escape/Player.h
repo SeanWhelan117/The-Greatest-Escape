@@ -15,7 +15,11 @@ public:
 
 private:
 	sf::Sprite m_player;
+	sf::Texture m_playerTexture;
 
+	sf::Vector2i mousePos; // mouses current position
+
+	void rotatePlayer(sf::Vector2i t_mousePos);
 
 };
 

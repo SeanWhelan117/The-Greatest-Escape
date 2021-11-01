@@ -5,6 +5,7 @@
 
 #include "GameState.h"
 #include "MainMenu.h"
+#include "Player.h"
 
 
 class Game
@@ -15,6 +16,7 @@ public:
 	void run();
 
 	MainMenu menu;
+	Player player;
 
 protected:
 
