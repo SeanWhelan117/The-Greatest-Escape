@@ -1,8 +1,8 @@
 #pragma once
 #include <SFML\Graphics.hpp>
 #include <iostream>
-#include <math.h>
-#include <cmath>
+//#include <math.h>
+//#include <cmath>
 
 
 class Player
@@ -24,9 +24,15 @@ private:
 
 	float speed = 0.5f;
 
+	int m_playerHealth = 100;
+
 	void rotatePlayer(sf::Vector2i t_mousePos);
 
 	void checkForPlayerMovement();
+
+	void sprint();
+
+	void takeDamage(int t_damageAmount);
 
 };
 

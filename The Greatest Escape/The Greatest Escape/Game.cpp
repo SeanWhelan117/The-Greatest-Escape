@@ -2,8 +2,6 @@
 #include <iostream>
 #include <stdlib.h>
 #include <time.h>
-//Author - Seán Whelan
-
 
 //updates per milliseconds
 static double const MS_PER_UPDATE = 10.0;

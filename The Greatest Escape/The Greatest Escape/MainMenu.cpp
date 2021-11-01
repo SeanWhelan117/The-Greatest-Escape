@@ -11,7 +11,9 @@ MainMenu::MainMenu()
 
 	for (int i = 0; i < MAX_BUTTONS; i++)
 	{
-		buttons[i].setFillColor(sf::Color::Red);
+		//buttons[i].setFillColor(sf::Color::Red);
+		buttons[i].setFillColor(sf::Color(255, 255, 255, 128));
+
 		buttons[i].setSize(sf::Vector2f(200, 50));
 		buttonPosY = buttonPosY + 120;
 		buttons[i].setPosition(sf::Vector2f(buttonPosX, buttonPosY));
@@ -169,7 +171,8 @@ void MainMenu::resetButtons()
 {
 	for (int i = 0; i < MAX_BUTTONS; i++)
 	{
-		buttons[i].setFillColor(sf::Color::Red);
+		//buttons[i].setFillColor(sf::Color::Red);
+		buttons[i].setFillColor(sf::Color(255, 255, 255, 128));
 		buttons[i].setScale(1, 1);
 	}
 	m_buttonOneText.setScale(1, 1);

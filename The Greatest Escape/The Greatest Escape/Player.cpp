@@ -9,7 +9,7 @@ Player::Player()
 
 	m_player.setPosition(200, 200);
 	m_player.setOrigin((m_player.getGlobalBounds().width / 2), (m_player.getGlobalBounds().height / 2));
-	m_player.setScale(0.1, 0.1);
+	m_player.setScale(0.1f, 0.1f);
 	//std::cout << "player created" <<std::to_string(m_player.getOrigin().x) << " " << std::to_string(m_player.getOrigin().y) << std::endl;
 }
 
@@ -32,29 +32,27 @@ void Player::update()
 
 void Player::render(sf::RenderWindow& t_window)
 {
-
 	t_window.draw(m_player);
 }
 
+/// <summary>
+/// Function rotates the player so they are always looking at where the mouse is 
+/// </summary>
+/// <param name="t_mousePos"></param>
 void Player::rotatePlayer(sf::Vector2i t_mousePos)
 {
-	//sf::Vector2f bounds = m_player.getOrigin();
 	sf::Vector2f playerPos = m_player.getPosition();
 
-	//playerPos.x += bounds.x / 2;
-	//playerPos.y += bounds.y / 2;
 
 	//double mouseAngle = -atan2((t_mousePos.x - playerPos.x), t_mousePos.y - playerPos.y) * 180.0f / 3.14159; //angle in degrees of rotation for sprite
-
 	//m_player.setRotation(mouseAngle);
 
 	float dx = playerPos.x - t_mousePos.x;
 	float dy = playerPos.y - t_mousePos.y;
 
-	float rotation = (-atan2(dx,dy)) * 180 / PI;
+	double mouseAngle = static_cast<double>(-atan2(dx, dy)) * 180.0f / PI; //finding the angle that the mouse is at vs the players location
 
-	m_player.setRotation(rotation + 180);
-
+	m_player.setRotation(mouseAngle + 180.0f);
 }
 
 void Player::checkForPlayerMovement()
@@ -76,8 +74,13 @@ void Player::checkForPlayerMovement()
 	{
 		m_player.move(speed, 0);
 	}
+	sprint();
 
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::LShift))
+}
+
+void Player::sprint()
+{
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::LShift)) //doubling the speed when the user is sprinting
 	{
 		speed = 1;
 	}
@@ -85,6 +88,9 @@ void Player::checkForPlayerMovement()
 	{
 		speed = 0.5;
 	}
-
 }
 
+void Player::takeDamage(int t_damageAmount)
+{
+	m_playerHealth -= t_damageAmount;
+}

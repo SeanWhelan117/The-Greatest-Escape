@@ -3,6 +3,10 @@
 #include "Game.h"
 
 
+//Authors:
+//Adam McGuigan
+//Seán Whelan
+
 int main()
 {
 	Game aGame;
