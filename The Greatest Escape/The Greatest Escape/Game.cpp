@@ -116,8 +116,8 @@ void Game::render()
 
 	if (gameState == GameState::gameplay)
 	{
+		m_window.clear(sf::Color(0,75,21,255));
 		player.render(m_window);
-		//m_window.clear(sf::Color::Green);
 	}
 
 	if (gameState == GameState::instructions)
