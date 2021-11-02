@@ -25,6 +25,8 @@ private:
 
 	void resetButtons(); //small function which is called to reset buttons after they are not being hoverd over anymore
 
+	void setupBackgroundImage(); //sets up the position and scale of the background image
+
 	static const int MAX_BUTTONS = 4;
 	sf::RectangleShape buttons[MAX_BUTTONS]; // buttons array for menu buttons
 
@@ -39,6 +41,9 @@ private:
 	sf::Text m_buttonFourText;
 
 	sf::Vector2i mousePos; // mouses current position
+
+	sf::Sprite m_backgroundImage;
+	sf::Texture backgroundTexture;
 
 };
 

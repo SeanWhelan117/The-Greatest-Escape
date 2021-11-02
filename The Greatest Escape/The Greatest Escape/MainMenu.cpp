@@ -22,6 +22,10 @@ MainMenu::MainMenu()
 
 	loadAssets();
 	setupButtonText();
+
+	m_backgroundImage.setTexture(backgroundTexture);
+
+	setupBackgroundImage();
 }
 
 void MainMenu::loadAssets()
@@ -29,6 +33,11 @@ void MainMenu::loadAssets()
 	if (!m_font.loadFromFile("./ASSETS/FONTS/arial.ttf"))
 	{
 		std::cout << "Error loading font..." << std::endl;
+	}
+
+	if (!backgroundTexture.loadFromFile("./ASSETS/SPRITES/BACKGROUND/menuBackground.png"))
+	{
+		std::cout << "Error loading the menus background texture" << std::endl;
 	}
 
 }
@@ -45,6 +54,8 @@ void MainMenu::update(GameState& t_gameState)
 
 void MainMenu::render(sf::RenderWindow& t_window)
 {
+	t_window.draw(m_backgroundImage);
+
 	for (int i = 0; i < MAX_BUTTONS; i++)
 	{
 		t_window.draw(buttons[i]);
@@ -56,6 +67,7 @@ void MainMenu::render(sf::RenderWindow& t_window)
 	t_window.draw(m_buttonTwoText);
 	t_window.draw(m_buttonThreeText);
 	t_window.draw(m_buttonFourText);
+
 
 }
 
@@ -179,4 +191,14 @@ void MainMenu::resetButtons()
 	m_buttonTwoText.setScale(1, 1);
 	m_buttonThreeText.setScale(1, 1);
 	m_buttonFourText.setScale(1, 1);
+}
+
+void MainMenu::setupBackgroundImage()
+{
+	// Scale is screenX / imageSizeX, screenY / imageSizeY
+	//			   1440 / 862			  900 / 503
+	m_backgroundImage.setScale(1.67, 1.79);
+
+	m_backgroundImage.setPosition(0, 0);
+
 }
