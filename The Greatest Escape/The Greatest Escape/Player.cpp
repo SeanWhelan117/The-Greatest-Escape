@@ -74,6 +74,18 @@ void Player::checkForPlayerMovement()
 	{
 		m_player.move(speed, 0);
 	}
+
+	//if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
+	//{
+	//	//m_player.move(0, -speed);
+
+	//	sf::Vector2f heading((mousePos.x - m_player.getPosition().x),(mousePos.y - m_player.getPosition().y));
+
+	//	if (heading.x > m_player.getPosition().x)
+	//	{
+	//		m_player.move(speed, 0);
+	//	}
+	//}
 	sprint();
 
 }
