@@ -6,6 +6,7 @@
 #include "GameState.h"
 #include "MainMenu.h"
 #include "Player.h"
+#include "MazeGenerator.h"
 
 
 class Game
@@ -17,6 +18,7 @@ public:
 
 	MainMenu menu;
 	Player player;
+	MazeGenerator maze;
 
 protected:
 

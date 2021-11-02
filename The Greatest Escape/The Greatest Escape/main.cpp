@@ -9,6 +9,7 @@
 
 int main()
 {
+	srand(time(NULL));
 	Game aGame;
 
 	aGame.run();

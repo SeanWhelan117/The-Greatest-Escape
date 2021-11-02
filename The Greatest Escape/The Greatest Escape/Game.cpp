@@ -100,6 +100,7 @@ void Game::update(double dt)
 	if (gameState == GameState::gameplay)
 	{
 		player.update();
+		maze.update();
 	}
 }
 
@@ -118,6 +119,7 @@ void Game::render()
 	{
 		m_window.clear(sf::Color(0,75,21,255));
 		player.render(m_window);
+		maze.render(m_window);
 	}
 
 	if (gameState == GameState::instructions)
