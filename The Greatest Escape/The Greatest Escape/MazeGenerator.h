@@ -12,11 +12,12 @@ public:
 	void update();
 
 	void render(sf::RenderWindow& t_window);
+	static const int NUM_OF_WALLS = 50;
+	sf::Sprite m_walls[NUM_OF_WALLS];
 
 private:
-	static const int NUM_OF_WALLS = 50;
+	
 
-	sf::Sprite m_walls[NUM_OF_WALLS];
 
 	sf::Texture wallTexture;
 

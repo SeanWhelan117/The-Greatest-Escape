@@ -27,6 +27,8 @@ protected:
 
 	sf::Font m_font;
 	sf::Text m_gameText;
+	
+	void checkCollisions();
 
 
 	void update(double dt);

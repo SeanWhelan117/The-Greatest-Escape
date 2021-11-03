@@ -15,8 +15,8 @@ public:
 	void update();
 	void render(sf::RenderWindow& t_window);
 
-private:
 	sf::Sprite m_player;
+private:
 	sf::Texture m_playerTexture;
 
 	sf::Vector2i mousePos; // mouses current position

@@ -11,7 +11,7 @@ MazeGenerator::MazeGenerator()
 		int randY = rand() % 900 + 1;
 		m_walls[i].setTexture(wallTexture);
 		m_walls[i].setPosition(randX, randY);
-		m_walls[i].setScale(0.1f, 0.1f);;
+		m_walls[i].setScale(0.1f, 0.1f);
 	}
 }
 

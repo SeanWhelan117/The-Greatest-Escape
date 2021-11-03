@@ -101,6 +101,7 @@ void Game::update(double dt)
 	{
 		player.update();
 		maze.update();
+		checkCollisions();
 	}
 }
 
@@ -133,5 +134,17 @@ void Game::render()
 	}
 
 	m_window.display();
+}
+
+void Game::checkCollisions()
+{
+	for (int i = 0; i < maze.NUM_OF_WALLS; i++)
+	{
+		if (player.m_player.getGlobalBounds().intersects(maze.m_walls[i].getGlobalBounds()))
+		{
+			std::cout << "colliding" << std::endl;
+		}
+
+	}
 }
 
