@@ -144,7 +144,6 @@ void Game::checkCollisions()
 		{
 			std::cout << "colliding" << std::endl;
 		}
-
 	}
 }
 

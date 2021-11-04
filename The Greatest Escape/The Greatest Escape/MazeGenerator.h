@@ -16,8 +16,6 @@ public:
 	sf::Sprite m_walls[NUM_OF_WALLS];
 
 private:
-	
-
 
 	sf::Texture wallTexture;
 

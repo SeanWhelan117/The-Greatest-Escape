@@ -30,7 +30,6 @@ protected:
 	
 	void checkCollisions();
 
-
 	void update(double dt);
 	void render();
 	void processEvents();
