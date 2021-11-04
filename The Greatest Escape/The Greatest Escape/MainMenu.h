@@ -3,11 +3,12 @@
 #include <iostream>
 
 #include "GameState.h"
-
+#include "Animation.h"
 
 class MainMenu
 {
 public:
+	
 	MainMenu();
 	void loadAssets();
 
@@ -44,6 +45,9 @@ private:
 
 	sf::Sprite m_backgroundImage;
 	sf::Texture backgroundTexture;
+
+	sf::IntRect textureRect;
+
 
 };
 

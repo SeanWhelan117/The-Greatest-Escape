@@ -35,7 +35,7 @@ void MainMenu::loadAssets()
 		std::cout << "Error loading font..." << std::endl;
 	}
 
-	if (!backgroundTexture.loadFromFile("./ASSETS/SPRITES/BACKGROUND/menuBackground.png"))
+	if (!backgroundTexture.loadFromFile("./ASSETS/SPRITES/BACKGROUND/backgroundSpritesheet2.png"))
 	{
 		std::cout << "Error loading the menus background texture" << std::endl;
 	}
@@ -54,6 +54,7 @@ void MainMenu::update(GameState& t_gameState)
 
 void MainMenu::render(sf::RenderWindow& t_window)
 {
+
 	t_window.draw(m_backgroundImage);
 
 	for (int i = 0; i < MAX_BUTTONS; i++)
@@ -196,9 +197,10 @@ void MainMenu::resetButtons()
 void MainMenu::setupBackgroundImage()
 {
 	// Scale is screenX / imageSizeX, screenY / imageSizeY
-	//			   1440 / 862			  900 / 503
-	m_backgroundImage.setScale(1.67, 1.79);
+
+	m_backgroundImage.setScale(1.6, 1.6);
 
 	m_backgroundImage.setPosition(0, 0);
 
 }
+
