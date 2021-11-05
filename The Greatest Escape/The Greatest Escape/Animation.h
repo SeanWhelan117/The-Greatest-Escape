@@ -4,26 +4,17 @@
 
 class Animation
 {
-private:
-    //variables
-    sf::Vector2u imageCount;
-    sf::Vector2u currentImage;
-
-    float totalTime;
-    float switchTime;
-
-    //functions
-
-
 public:
-    //variables
-    sf::IntRect uvRect;
+	Animation();
 
-    //constructor && destructor
-    Animation(sf::Texture* texture, sf::Vector2u imageCount, float switchTime);
-    virtual ~Animation();
+	sf::IntRect animate(sf::Texture t_texture, int t_numOfFrames, int t_frameWidth, int t_frameHeight, int t_cols, int t_rows);
 
-    void update(int row, float deltaTime);
+
+private:
+
+	int animationFrame = 0; 
+	int totalElapsed = 0;
+	sf::IntRect rectSourceSprite;
 
 };
 

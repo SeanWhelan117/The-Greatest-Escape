@@ -15,6 +15,8 @@ public:
 	void update(GameState& t_gameState);
 	void render(sf::RenderWindow& t_window);
 
+	Animation anim;
+
 private:
 
 	void setupButtonText(); // setups font colour all that stuff for the button text
@@ -47,6 +49,7 @@ private:
 	sf::Texture backgroundTexture;
 
 	sf::IntRect textureRect;
+
 
 
 };
