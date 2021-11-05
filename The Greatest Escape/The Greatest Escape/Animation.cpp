@@ -8,7 +8,7 @@ Animation::Animation()
 sf::IntRect Animation::animate(sf::Texture t_texture, int t_numOfFrames, int t_frameWidth, int t_frameHeight, int t_cols, int t_rows)
 {
     totalElapsed++;
-    if (totalElapsed >14)
+    if (totalElapsed >22)
     {
         totalElapsed = 0;
         animationFrame++;

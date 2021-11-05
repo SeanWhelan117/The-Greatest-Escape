@@ -35,7 +35,12 @@ void MainMenu::loadAssets()
 		std::cout << "Error loading font..." << std::endl;
 	}
 
-	if (!backgroundTexture.loadFromFile("./ASSETS/SPRITES/BACKGROUND/backgroundSpritesheet3.png"))
+	/*if (!backgroundTexture.loadFromFile("./ASSETS/SPRITES/BACKGROUND/backgroundSpritesheet3.png"))
+	{
+		std::cout << "Error loading the menus background texture" << std::endl;
+	}*/
+
+	if (!backgroundTexture.loadFromFile("./ASSETS/SPRITES/BACKGROUND/spriteSheetTest.png"))
 	{
 		std::cout << "Error loading the menus background texture" << std::endl;
 	}
@@ -56,7 +61,7 @@ void MainMenu::render(sf::RenderWindow& t_window)
 {
 
 	//playerSprite.setTextureRect(rectSourceSprite);
-	textureRect = anim.animate(backgroundTexture, 12, 864, 505, 3, 4);
+	textureRect = anim.animate(backgroundTexture, 12, 861, 503, 2, 6);
 	m_backgroundImage.setTextureRect(textureRect);
 	t_window.draw(m_backgroundImage);
 
