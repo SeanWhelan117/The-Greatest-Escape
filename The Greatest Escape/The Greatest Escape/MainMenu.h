@@ -8,14 +8,14 @@
 class MainMenu
 {
 public:
+	Animation anim;
 	
 	MainMenu();
 	void loadAssets();
 
-	void update(GameState& t_gameState);
+	void update(GameState& t_gameState, sf::RenderWindow& t_window);
 	void render(sf::RenderWindow& t_window);
 
-	Animation anim;
 
 private:
 

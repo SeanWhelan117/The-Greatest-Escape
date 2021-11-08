@@ -23,8 +23,8 @@ MainMenu::MainMenu()
 	loadAssets();
 	setupButtonText();
 
-	m_backgroundImage.setTexture(backgroundTexture);
 
+	m_backgroundImage.setTexture(backgroundTexture);
 	setupBackgroundImage();
 }
 
@@ -35,21 +35,21 @@ void MainMenu::loadAssets()
 		std::cout << "Error loading font..." << std::endl;
 	}
 
-	/*if (!backgroundTexture.loadFromFile("./ASSETS/SPRITES/BACKGROUND/backgroundSpritesheet3.png"))
-	{
-		std::cout << "Error loading the menus background texture" << std::endl;
-	}*/
-
-	if (!backgroundTexture.loadFromFile("./ASSETS/SPRITES/BACKGROUND/spriteSheetTest.png"))
+	if (!backgroundTexture.loadFromFile("./ASSETS/SPRITES/BACKGROUND/menuBackground.png"))
 	{
 		std::cout << "Error loading the menus background texture" << std::endl;
 	}
 
+	/*if (!backgroundTexture.loadFromFile("./ASSETS/SPRITES/BACKGROUND/spriteSheetTest.png"))
+	{
+		std::cout << "Error loading the menus background texture" << std::endl;
+	}*/
+
 }
 
-void MainMenu::update(GameState& t_gameState)
+void MainMenu::update(GameState& t_gameState, sf::RenderWindow& t_window)
 {
-	mousePos = sf::Mouse::getPosition();
+	mousePos = sf::Mouse::getPosition(t_window);
 
 	//std::cout << "Mouse Position x = " << mousePos.x << " Mouse Position y = " << mousePos.y << std::endl;
 
@@ -60,9 +60,8 @@ void MainMenu::update(GameState& t_gameState)
 void MainMenu::render(sf::RenderWindow& t_window)
 {
 
-	//playerSprite.setTextureRect(rectSourceSprite);
-	textureRect = anim.animate(backgroundTexture, 12, 861, 503, 2, 6);
-	m_backgroundImage.setTextureRect(textureRect);
+	//textureRect = anim.animate(backgroundTexture, 11, 287, 167.6, 2, 6);
+	//m_backgroundImage.setTextureRect(textureRect);
 	t_window.draw(m_backgroundImage);
 
 	for (int i = 0; i < MAX_BUTTONS; i++)
@@ -206,7 +205,7 @@ void MainMenu::setupBackgroundImage()
 {
 	// Scale is screenX / imageSizeX, screenY / imageSizeY
 
-	m_backgroundImage.setScale(1.6, 1.6);
+	m_backgroundImage.setScale(1.64, 1.8);
 
 	m_backgroundImage.setPosition(0, 0);
 
