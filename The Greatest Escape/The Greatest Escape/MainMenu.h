@@ -4,6 +4,7 @@
 
 #include "GameState.h"
 #include "Animation.h"
+#include "Globals.h"
 
 class MainMenu
 {
@@ -49,7 +50,9 @@ private:
 	sf::Texture backgroundTexture;
 
 	sf::IntRect textureRect;
-
+	
+	float spriteX = 0;
+	float spriteY = 0;
 
 
 };

@@ -35,15 +35,15 @@ void MainMenu::loadAssets()
 		std::cout << "Error loading font..." << std::endl;
 	}
 
-	if (!backgroundTexture.loadFromFile("./ASSETS/SPRITES/BACKGROUND/menuBackground.png"))
-	{
-		std::cout << "Error loading the menus background texture" << std::endl;
-	}
-
-	/*if (!backgroundTexture.loadFromFile("./ASSETS/SPRITES/BACKGROUND/spriteSheetTest.png"))
+	/*if (!backgroundTexture.loadFromFile("./ASSETS/SPRITES/BACKGROUND/menuBackground.png"))
 	{
 		std::cout << "Error loading the menus background texture" << std::endl;
 	}*/
+
+	if (!backgroundTexture.loadFromFile("./ASSETS/SPRITES/BACKGROUND/FinalSpriteSheet3.png"))
+	{
+		std::cout << "Error loading the menus background texture" << std::endl;
+	}
 
 }
 
@@ -60,8 +60,8 @@ void MainMenu::update(GameState& t_gameState, sf::RenderWindow& t_window)
 void MainMenu::render(sf::RenderWindow& t_window)
 {
 
-	//textureRect = anim.animate(backgroundTexture, 11, 287, 167.6, 2, 6);
-	//m_backgroundImage.setTextureRect(textureRect);
+	textureRect = anim.animate(backgroundTexture, 11, spriteX, spriteY, 3, 4);
+	m_backgroundImage.setTextureRect(textureRect);
 	t_window.draw(m_backgroundImage);
 
 	for (int i = 0; i < MAX_BUTTONS; i++)
@@ -204,8 +204,16 @@ void MainMenu::resetButtons()
 void MainMenu::setupBackgroundImage()
 {
 	// Scale is screenX / imageSizeX, screenY / imageSizeY
+	 spriteX = backgroundTexture.getSize().x / 3;
+	 spriteY = backgroundTexture.getSize().y / 4;
 
-	m_backgroundImage.setScale(1.64, 1.8);
+	float xScale = Globals::screenX / spriteX;
+	float yScale = Globals::screenY / spriteY;
+
+	std::cout << xScale << yScale << std::endl;
+
+	m_backgroundImage.setScale(xScale, yScale);
+
 
 	m_backgroundImage.setPosition(0, 0);
 

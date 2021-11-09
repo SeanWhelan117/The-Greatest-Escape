@@ -140,6 +140,7 @@
     <ClInclude Include="Animation.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameState.h" />
+    <ClInclude Include="Globals.h" />
     <ClInclude Include="MainMenu.h" />
     <ClInclude Include="MazeGenerator.h" />
     <ClInclude Include="Player.h" />

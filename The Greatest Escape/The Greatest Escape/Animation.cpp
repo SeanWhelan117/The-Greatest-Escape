@@ -10,7 +10,7 @@ sf::IntRect Animation::animate(sf::Texture t_texture, int t_numOfFrames, int t_f
 {
     totalElapsed++;
 
-    if (totalElapsed >22)
+    if (totalElapsed >6)
     {
         totalElapsed = 0;
         animationFrame++;
@@ -26,7 +26,10 @@ sf::IntRect Animation::animate(sf::Texture t_texture, int t_numOfFrames, int t_f
     rectSourceSprite.width = t_frameWidth; 
     rectSourceSprite.left = col * rectSourceSprite.width;
     rectSourceSprite.top = row * rectSourceSprite.height;
-    
+
+    /*std::cout << rectSourceSprite.height << std::endl;
+    std::cout << rectSourceSprite.width << std::endl;*/
+
 	return rectSourceSprite;
 }
 

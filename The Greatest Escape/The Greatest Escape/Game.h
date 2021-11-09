@@ -7,6 +7,7 @@
 #include "MainMenu.h"
 #include "Player.h"
 #include "MazeGenerator.h"
+#include "Globals.h"
 
 
 class Game
