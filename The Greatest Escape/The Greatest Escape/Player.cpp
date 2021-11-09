@@ -13,6 +13,7 @@ Player::Player()
 	//std::cout << "player created" <<std::to_string(m_player.getOrigin().x) << " " << std::to_string(m_player.getOrigin().y) << std::endl;
 }
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 void Player::loadAssets()
 {
 	if (!m_playerTexture.loadFromFile("ASSETS/SPRITES/PLAYER/playerTest.png"))
@@ -21,7 +22,7 @@ void Player::loadAssets()
 	}
 
 }
-
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 void Player::update()
 {
 	mousePos = sf::Mouse::getPosition();
@@ -30,6 +31,7 @@ void Player::update()
 
 }
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 void Player::render(sf::RenderWindow& t_window)
 {
 	t_window.draw(m_player);
@@ -39,13 +41,10 @@ void Player::render(sf::RenderWindow& t_window)
 /// Function rotates the player so they are always looking at where the mouse is 
 /// </summary>
 /// <param name="t_mousePos"></param>
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 void Player::rotatePlayer(sf::Vector2i t_mousePos)
 {
 	sf::Vector2f playerPos = m_player.getPosition();
-
-
-	//double mouseAngle = -atan2((t_mousePos.x - playerPos.x), t_mousePos.y - playerPos.y) * 180.0f / 3.14159; //angle in degrees of rotation for sprite
-	//m_player.setRotation(mouseAngle);
 
 	float dx = playerPos.x - t_mousePos.x;
 	float dy = playerPos.y - t_mousePos.y;
@@ -55,6 +54,7 @@ void Player::rotatePlayer(sf::Vector2i t_mousePos)
 	m_player.setRotation(mouseAngle + 180.0f);
 }
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 void Player::checkForPlayerMovement()
 {
 
@@ -75,21 +75,11 @@ void Player::checkForPlayerMovement()
 		m_player.move(speed, 0);
 	}
 
-	//if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
-	//{
-	//	//m_player.move(0, -speed);
-
-	//	sf::Vector2f heading((mousePos.x - m_player.getPosition().x),(mousePos.y - m_player.getPosition().y));
-
-	//	if (heading.x > m_player.getPosition().x)
-	//	{
-	//		m_player.move(speed, 0);
-	//	}
-	//}
 	sprint();
 
 }
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 void Player::sprint()
 {
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::LShift)) //doubling the speed when the user is sprinting
@@ -102,6 +92,7 @@ void Player::sprint()
 	}
 }
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 void Player::takeDamage(int t_damageAmount)
 {
 	m_playerHealth -= t_damageAmount;

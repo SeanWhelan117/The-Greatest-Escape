@@ -11,7 +11,6 @@ MainMenu::MainMenu()
 
 	for (int i = 0; i < MAX_BUTTONS; i++)
 	{
-		//buttons[i].setFillColor(sf::Color::Red);
 		buttons[i].setFillColor(sf::Color(255, 255, 255, 128));
 
 		buttons[i].setSize(sf::Vector2f(200, 50));
@@ -28,6 +27,7 @@ MainMenu::MainMenu()
 	setupBackgroundImage();
 }
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 void MainMenu::loadAssets()
 {
 	if (!m_font.loadFromFile("./ASSETS/FONTS/arial.ttf"))
@@ -35,18 +35,13 @@ void MainMenu::loadAssets()
 		std::cout << "Error loading font..." << std::endl;
 	}
 
-	/*if (!backgroundTexture.loadFromFile("./ASSETS/SPRITES/BACKGROUND/menuBackground.png"))
-	{
-		std::cout << "Error loading the menus background texture" << std::endl;
-	}*/
-
 	if (!backgroundTexture.loadFromFile("./ASSETS/SPRITES/BACKGROUND/FinalSpriteSheet3.png"))
 	{
 		std::cout << "Error loading the menus background texture" << std::endl;
 	}
 
 }
-
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 void MainMenu::update(GameState& t_gameState, sf::RenderWindow& t_window)
 {
 	mousePos = sf::Mouse::getPosition(t_window);
@@ -57,9 +52,9 @@ void MainMenu::update(GameState& t_gameState, sf::RenderWindow& t_window)
 
 }
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 void MainMenu::render(sf::RenderWindow& t_window)
 {
-
 	textureRect = anim.animate(backgroundTexture, 11, spriteX, spriteY, 3, 4);
 	m_backgroundImage.setTextureRect(textureRect);
 	t_window.draw(m_backgroundImage);
@@ -79,6 +74,7 @@ void MainMenu::render(sf::RenderWindow& t_window)
 
 }
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 void MainMenu::setupButtonText()
 {
 	//button 1 setup
@@ -119,6 +115,7 @@ void MainMenu::setupButtonText()
 	 
 }
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 void MainMenu::mouseButtonCollision(sf::Vector2i t_mousePos, GameState& t_gameState)
 {
 	if (t_mousePos.x < buttons[0].getPosition().x + 200 && t_mousePos.x > buttons[0].getPosition().x) //just a check that the mouse is within the same x coords as all buttons
@@ -186,7 +183,7 @@ void MainMenu::mouseButtonCollision(sf::Vector2i t_mousePos, GameState& t_gameSt
 	}
 }
 
-
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 void MainMenu::resetButtons()
 {
 	for (int i = 0; i < MAX_BUTTONS; i++)
@@ -201,6 +198,7 @@ void MainMenu::resetButtons()
 	m_buttonFourText.setScale(1, 1);
 }
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 void MainMenu::setupBackgroundImage()
 {
 	// Scale is screenX / imageSizeX, screenY / imageSizeY

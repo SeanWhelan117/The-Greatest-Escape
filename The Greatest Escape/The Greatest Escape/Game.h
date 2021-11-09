@@ -29,6 +29,7 @@ protected:
 	sf::Font m_font;
 	sf::Text m_gameText;
 	
+	//function thats used to check for collisions between the wall and the player
 	void checkCollisions();
 
 	void update(double dt);

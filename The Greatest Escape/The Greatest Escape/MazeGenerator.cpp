@@ -14,6 +14,7 @@ MazeGenerator::MazeGenerator()
 	placeWalls();
 }
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 void MazeGenerator::loadAssets()
 {
 
@@ -23,11 +24,13 @@ void MazeGenerator::loadAssets()
 	}
 }
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 void MazeGenerator::update()
 {
 	
 }
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 void MazeGenerator::render(sf::RenderWindow& t_window)
 {
 	for (int i = 0; i < NUM_OF_WALLS; i++)
@@ -41,6 +44,7 @@ void MazeGenerator::render(sf::RenderWindow& t_window)
 /// and then when we decide which level to play the specific file will be opened and the vectors extracted
 /// For now though, as we have just 1 level we are going to hardcode the positions of the mazes wall sections.
 /// </summary>
+/// ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 void MazeGenerator::placeWalls()
 {
 	//position and rotation of every sprite.
@@ -49,8 +53,6 @@ void MazeGenerator::placeWalls()
 
 	m_walls[0].setPosition(750, 750);
 	m_walls[0].setRotation(0);
-
-	
 
 
 	for (int i = 1; i < 11; i++)

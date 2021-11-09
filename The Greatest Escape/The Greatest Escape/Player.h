@@ -23,16 +23,20 @@ private:
 	sf::Vector2i mousePos; // mouses current position
 	const double PI = 3.141592654;
 
-	float speed = 0.5f;
+	float speed = 0.5f; //speed which the player moves at 
 
-	int m_playerHealth = 100;
+	int m_playerHealth = 100; //players initial health
 
-	void rotatePlayer(sf::Vector2i t_mousePos);
+	// a function which follows the players mouse position and rotates the player based on that postion
+	void rotatePlayer(sf::Vector2i t_mousePos); 
 
+	// A function which checks for input from the player and moves the player based on this input.
 	void checkForPlayerMovement();
 
+	//increases the speed of the player 
 	void sprint();
 
+	//takes damage away from the players health when they get hit
 	void takeDamage(int t_damageAmount);
 
 };

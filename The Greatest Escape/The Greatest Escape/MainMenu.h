@@ -51,7 +51,7 @@ private:
 
 	sf::IntRect textureRect;
 	
-	float spriteX = 0;
+	float spriteX = 0; //the x and y size of every specific sprite in the spritesheet 
 	float spriteY = 0;
 
 
