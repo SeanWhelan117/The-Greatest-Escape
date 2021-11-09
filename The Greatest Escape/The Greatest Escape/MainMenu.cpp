@@ -6,8 +6,8 @@
 MainMenu::MainMenu()
 {
 
-	int buttonPosX = 600;
-	int buttonPosY = 200;
+	int buttonPosX = (Globals::screenX / 2) - 100;//600;
+	int buttonPosY = (Globals::screenY / 4) - 25;//200;
 
 	for (int i = 0; i < MAX_BUTTONS; i++)
 	{
@@ -121,9 +121,9 @@ void MainMenu::setupButtonText()
 
 void MainMenu::mouseButtonCollision(sf::Vector2i t_mousePos, GameState& t_gameState)
 {
-	if (t_mousePos.x < 770 && t_mousePos.x > 570) //just a check that the mouse is within the same x coords as all buttons
+	if (t_mousePos.x < buttons[0].getPosition().x + 200 && t_mousePos.x > buttons[0].getPosition().x) //just a check that the mouse is within the same x coords as all buttons
 	{
-		if (t_mousePos.y > 285 && t_mousePos.y < 335)
+		if (t_mousePos.y > buttons[0].getPosition().y && t_mousePos.y < buttons[0].getPosition().y + 50)
 		{
 			buttons[0].setFillColor(sf::Color::Yellow);
 			buttons[0].setScale(1.25, 1.25);
@@ -135,7 +135,7 @@ void MainMenu::mouseButtonCollision(sf::Vector2i t_mousePos, GameState& t_gameSt
 				t_gameState = GameState::gameplay;
 			}
 		}
-		else if (t_mousePos.y > 400 && t_mousePos.y < 450)
+		else if (t_mousePos.y > buttons[1].getPosition().y && t_mousePos.y < buttons[1].getPosition().y + 50)
 		{
 			buttons[1].setFillColor(sf::Color::Yellow);
 			buttons[1].setScale(1.25, 1.25);
@@ -149,7 +149,7 @@ void MainMenu::mouseButtonCollision(sf::Vector2i t_mousePos, GameState& t_gameSt
 
 
 		}
-		else if (t_mousePos.y > 525 && t_mousePos.y < 575)
+		else if (t_mousePos.y > buttons[2].getPosition().y && t_mousePos.y < buttons[2].getPosition().y + 50)
 		{
 			buttons[2].setFillColor(sf::Color::Yellow);
 			buttons[2].setScale(1.25, 1.25);
@@ -162,7 +162,7 @@ void MainMenu::mouseButtonCollision(sf::Vector2i t_mousePos, GameState& t_gameSt
 			}
 
 		}
-		else if (t_mousePos.y > 645 && t_mousePos.y < 695)
+		else if (t_mousePos.y > buttons[3].getPosition().y && t_mousePos.y < buttons[3].getPosition().y + 50)
 		{
 			buttons[3].setFillColor(sf::Color::Yellow);
 			buttons[3].setScale(1.25, 1.25);
