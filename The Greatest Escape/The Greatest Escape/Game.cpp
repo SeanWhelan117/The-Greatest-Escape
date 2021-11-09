@@ -8,7 +8,7 @@ static double const MS_PER_UPDATE = 10.0;
 
 
 Game::Game()
-	: m_window(sf::VideoMode(Globals::screenX, Globals::screenY, 32), "SFML Playground", sf::Style::Default)
+	: m_window(sf::VideoMode(Globals::SCREEN_X, Globals::SCREEN_Y, 32), "SFML Playground", sf::Style::Default)
 {
 	m_window.setVerticalSyncEnabled(true);
 

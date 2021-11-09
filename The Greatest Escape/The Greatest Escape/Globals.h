@@ -2,6 +2,6 @@
 class Globals
 {
 public:
-	static const int screenX = 1400;
-	static const int screenY = 900;
+	static const int SCREEN_X = 1400;
+	static const int SCREEN_Y = 900;
 };

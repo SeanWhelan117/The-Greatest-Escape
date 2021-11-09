@@ -6,8 +6,8 @@
 MainMenu::MainMenu()
 {
 
-	int buttonPosX = (Globals::screenX / 2) - 100;//600;
-	int buttonPosY = (Globals::screenY / 4) - 25;//200;
+	int buttonPosX = (Globals::SCREEN_X / 2) - 100;//600;
+	int buttonPosY = (Globals::SCREEN_Y / 4) - 25;//200;
 
 	for (int i = 0; i < MAX_BUTTONS; i++)
 	{
@@ -207,8 +207,8 @@ void MainMenu::setupBackgroundImage()
 	 spriteX = backgroundTexture.getSize().x / 3;
 	 spriteY = backgroundTexture.getSize().y / 4;
 
-	float xScale = Globals::screenX / spriteX;
-	float yScale = Globals::screenY / spriteY;
+	float xScale = Globals::SCREEN_X / spriteX;
+	float yScale = Globals::SCREEN_Y / spriteY;
 
 	std::cout << xScale << yScale << std::endl;
 

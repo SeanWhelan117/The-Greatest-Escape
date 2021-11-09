@@ -7,7 +7,7 @@ Player::Player()
 
 	m_player.setTexture(m_playerTexture);
 
-	m_player.setPosition(200, 200);
+	m_player.setPosition((Globals::SCREEN_X / 2), (Globals::SCREEN_Y - 150));
 	m_player.setOrigin((m_player.getGlobalBounds().width / 2), (m_player.getGlobalBounds().height / 2));
 	m_player.setScale(0.1f, 0.1f);
 	//std::cout << "player created" <<std::to_string(m_player.getOrigin().x) << " " << std::to_string(m_player.getOrigin().y) << std::endl;
