@@ -13,7 +13,7 @@ public:
 
 	void loadAssets();
 
-	void update(const sf::RenderWindow& t_window, bool t_colliding);
+	void update(const sf::RenderWindow& t_window, bool  t_colliding);
 	void render(sf::RenderWindow& t_window);
 
 	sf::Sprite m_player;

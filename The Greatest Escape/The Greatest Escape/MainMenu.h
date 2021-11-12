@@ -49,6 +49,9 @@ private:
 	sf::Sprite m_backgroundImage;
 	sf::Texture backgroundTexture;
 
+	sf::Sprite m_playerForMenuImage;
+	sf::Texture playerTexture;
+
 	sf::IntRect textureRect;
 	
 	float spriteX = 0; //the x and y size of every specific sprite in the spritesheet 

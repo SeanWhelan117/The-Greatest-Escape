@@ -66,6 +66,7 @@ void Player::checkForPlayerMovement(bool t_colliding)
 			}
 			
 		}
+
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
 		{
 			if (t_colliding == false)
@@ -89,6 +90,7 @@ void Player::checkForPlayerMovement(bool t_colliding)
 		}
 
 	sprint();
+
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

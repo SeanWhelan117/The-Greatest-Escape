@@ -24,6 +24,10 @@ MainMenu::MainMenu()
 
 
 	m_backgroundImage.setTexture(backgroundTexture);
+	m_playerForMenuImage.setTexture(playerTexture);
+	m_playerForMenuImage.setPosition(50, 100);
+	m_playerForMenuImage.setScale(2, 2);
+
 	setupBackgroundImage();
 }
 
@@ -38,6 +42,11 @@ void MainMenu::loadAssets()
 	if (!backgroundTexture.loadFromFile("./ASSETS/SPRITES/BACKGROUND/FinalSpriteSheet3.png"))
 	{
 		std::cout << "Error loading the menus background texture" << std::endl;
+	}
+
+	if (!playerTexture.loadFromFile("./ASSETS/SPRITES/BACKGROUND/playerForMenu.png"))
+	{
+		std::cout << "Error loading the player for menu texture" << std::endl;
 	}
 
 }
@@ -59,6 +68,9 @@ void MainMenu::render(sf::RenderWindow& t_window)
 	m_backgroundImage.setTextureRect(textureRect);
 	t_window.draw(m_backgroundImage);
 
+	
+	t_window.draw(m_playerForMenuImage);
+
 	for (int i = 0; i < MAX_BUTTONS; i++)
 	{
 		t_window.draw(buttons[i]);
@@ -70,7 +82,6 @@ void MainMenu::render(sf::RenderWindow& t_window)
 	t_window.draw(m_buttonTwoText);
 	t_window.draw(m_buttonThreeText);
 	t_window.draw(m_buttonFourText);
-
 
 }
 
