@@ -51,13 +51,13 @@ void MazeGenerator::placeWalls()
 	// screen size is 1400 by 900
 	// player pos is 700, 800
 
-	m_walls[0].setPosition(750, 750);
+	m_walls[0].setPosition(750, 850);
 	m_walls[0].setRotation(0);
-
+	
 
 	for (int i = 1; i < 11; i++)
 	{
-		m_walls[i].setPosition(m_walls[i - 1].getPosition().x + m_walls[i].getGlobalBounds().width, 750);
+		m_walls[i].setPosition(m_walls[i - 1].getPosition().x + m_walls[i].getGlobalBounds().width, 850);
 	}
 
 
@@ -71,12 +71,12 @@ void MazeGenerator::placeWalls()
 		m_walls[j].setRotation(-90);
 	}
 
-	m_walls[23].setPosition(600, 750);
+	m_walls[23].setPosition(600, 850);
 	m_walls[23].setRotation(0);
 
 	for (int k = 24; k < 34; k++)
 	{
-		m_walls[k].setPosition(m_walls[k - 1].getPosition().x - m_walls[k].getGlobalBounds().width, 750);
+		m_walls[k].setPosition(m_walls[k - 1].getPosition().x - m_walls[k].getGlobalBounds().width, 850);
 	}
 
 	m_walls[34].setPosition(m_walls[33].getPosition().x , m_walls[33].getPosition().y);

@@ -99,7 +99,7 @@ void Game::update(double dt)
 
 	if (gameState == GameState::gameplay)
 	{
-		player.update();
+		player.update(m_window);
 		maze.update();
 		checkCollisions();
 	}

@@ -23,9 +23,9 @@ void Player::loadAssets()
 
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-void Player::update()
+void Player::update(const sf::RenderWindow& t_window)
 {
-	mousePos = sf::Mouse::getPosition();
+	mousePos = sf::Mouse::getPosition(t_window);
 	rotatePlayer(mousePos);
 	checkForPlayerMovement();
 
