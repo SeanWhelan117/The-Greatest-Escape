@@ -8,6 +8,8 @@
 #include "Player.h"
 #include "MazeGenerator.h"
 #include "Globals.h"
+#include "Instructions.h"
+#include "Options.h"
 
 
 class Game
@@ -20,6 +22,8 @@ public:
 	MainMenu menu;
 	Player player;
 	MazeGenerator maze;
+	Instructions instructPage;
+	Options optionsPage;
 
 protected:
 
