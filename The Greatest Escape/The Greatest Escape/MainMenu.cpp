@@ -25,8 +25,8 @@ MainMenu::MainMenu()
 
 	m_backgroundImage.setTexture(backgroundTexture);
 	m_playerForMenuImage.setTexture(playerTexture);
-	m_playerForMenuImage.setPosition(50, 100);
-	m_playerForMenuImage.setScale(2, 2);
+	m_playerForMenuImage.setPosition(-80, 250);
+	m_playerForMenuImage.setScale(0.6, 0.6);
 
 	setupBackgroundImage();
 }
@@ -64,11 +64,11 @@ void MainMenu::update(GameState& t_gameState, sf::RenderWindow& t_window)
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 void MainMenu::render(sf::RenderWindow& t_window)
 {
+
 	textureRect = anim.animate(backgroundTexture, 11, spriteX, spriteY, 3, 4);
 	m_backgroundImage.setTextureRect(textureRect);
 	t_window.draw(m_backgroundImage);
 
-	
 	t_window.draw(m_playerForMenuImage);
 
 	for (int i = 0; i < MAX_BUTTONS; i++)
