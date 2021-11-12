@@ -23,11 +23,11 @@ void Player::loadAssets()
 
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-void Player::update(const sf::RenderWindow& t_window)
+void Player::update(const sf::RenderWindow& t_window, bool t_colliding)
 {
 	mousePos = sf::Mouse::getPosition(t_window);
 	rotatePlayer(mousePos);
-	checkForPlayerMovement();
+	checkForPlayerMovement(t_colliding);
 
 }
 
@@ -55,28 +55,40 @@ void Player::rotatePlayer(sf::Vector2i t_mousePos)
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-void Player::checkForPlayerMovement()
+void Player::checkForPlayerMovement(bool t_colliding)
 {
-
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
-	{
-		m_player.move(0, -speed);
-	}
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
-	{
-		m_player.move(-speed, 0);
-	}
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
-	{
-		m_player.move(0, speed);
-	}
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
-	{
-		m_player.move(speed, 0);
-	}
+	
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
+		{
+			if (t_colliding == false)
+			{
+				m_player.move(0, -speed);
+			}
+			
+		}
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
+		{
+			if (t_colliding == false)
+			{
+				m_player.move(-speed, 0);
+			}
+		}
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
+		{
+			if (t_colliding == false)
+			{
+				m_player.move(0, speed);
+			}
+		}
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
+		{
+			if (t_colliding == false)
+			{
+				m_player.move(speed, 0);
+			}
+		}
 
 	sprint();
-
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

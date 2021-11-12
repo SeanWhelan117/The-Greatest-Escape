@@ -11,7 +11,6 @@ Game::Game()
 	: m_window(sf::VideoMode(Globals::SCREEN_X, Globals::SCREEN_Y, 32), "The Greatest Escape", sf::Style::Default)
 {
 	m_window.setVerticalSyncEnabled(true);
-
 	if (!m_font.loadFromFile("./ASSETS/FONTS/arial.ttf"))
 	{
 		std::cout << "Error loading font..." << std::endl;
@@ -99,10 +98,12 @@ void Game::update(double dt)
 
 	if (gameState == GameState::gameplay)
 	{
-		player.update(m_window);
+		player.update(m_window, colliding);
 		maze.update();
 		checkCollisions();
 	}
+
+	std::cout << colliding << std::endl;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -143,8 +144,14 @@ void Game::checkCollisions()
 	{
 		if (player.m_player.getGlobalBounds().intersects(maze.m_walls[i].getGlobalBounds()))
 		{
-			std::cout << "colliding" << std::endl;
+			//std::cout << "Colliding" << std::endl;
+			//player.m_player.move(player.speed, player.speed);
+			colliding = true;
 		}
+		//if (player.m_player.getGlobalBounds().intersects(maze.m_walls[i].getGlobalBounds()) == false && colliding == true)
+		//{
+		//	colliding = false;
+		//}
 	}
 }
 

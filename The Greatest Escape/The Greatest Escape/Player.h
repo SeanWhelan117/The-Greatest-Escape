@@ -13,17 +13,17 @@ public:
 
 	void loadAssets();
 
-	void update(const sf::RenderWindow& t_window);
+	void update(const sf::RenderWindow& t_window, bool t_colliding);
 	void render(sf::RenderWindow& t_window);
 
 	sf::Sprite m_player;
+	float speed = 0.5f; //speed which the player moves at 
 private:
 	sf::Texture m_playerTexture;
 
 	sf::Vector2i mousePos; // mouses current position
 	const double PI = 3.141592654;
 
-	float speed = 0.5f; //speed which the player moves at 
 
 	int m_playerHealth = 100; //players initial health
 
@@ -31,7 +31,7 @@ private:
 	void rotatePlayer(sf::Vector2i t_mousePos); 
 
 	// A function which checks for input from the player and moves the player based on this input.
-	void checkForPlayerMovement();
+	void checkForPlayerMovement(bool t_colliding);
 
 	//increases the speed of the player 
 	void sprint();

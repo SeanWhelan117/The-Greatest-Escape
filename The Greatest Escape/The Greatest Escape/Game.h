@@ -45,5 +45,7 @@ protected:
 	// main window
 	sf::RenderWindow m_window;
 
+	bool colliding = false;
+
 };
 
