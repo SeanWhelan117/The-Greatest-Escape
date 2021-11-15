@@ -15,5 +15,8 @@ public:
 
 
 private:
+
+	sf::Font m_font; // arial.ttf font
+	sf::Text m_optionsText;
 };
 

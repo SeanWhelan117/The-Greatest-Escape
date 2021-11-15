@@ -135,13 +135,11 @@ void Game::render()
 	if (gameState == GameState::instructions)
 	{
 		instructPage.render(m_window);
-		m_window.clear(sf::Color::Red);
 	}
 
 	if (gameState == GameState::options)
 	{
 		optionsPage.render(m_window);
-		m_window.clear(sf::Color::Magenta);
 	}
 
 	m_window.display();

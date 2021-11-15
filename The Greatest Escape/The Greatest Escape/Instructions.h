@@ -14,5 +14,9 @@ public:
 	void render(sf::RenderWindow& t_window);
 
 private:
+
+	sf::Font m_font; // arial.ttf font
+
+	sf::Text m_instructionsText;
 };
 
