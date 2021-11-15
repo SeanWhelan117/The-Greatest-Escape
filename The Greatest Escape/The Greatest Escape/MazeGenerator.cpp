@@ -89,4 +89,6 @@ void MazeGenerator::placeWalls()
 		m_walls[q].setRotation(-90);
 	}
 
+	m_walls[46].setPosition(500, 500);
+
 }

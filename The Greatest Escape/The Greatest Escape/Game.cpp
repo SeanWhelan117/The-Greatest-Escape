@@ -112,6 +112,8 @@ void Game::update(double dt)
 	{
 		optionsPage.update();
 	}
+
+	std::cout << colliding << std::endl;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -156,10 +158,10 @@ void Game::checkCollisions()
 			//player.m_player.move(player.speed, player.speed);
 			colliding = true;
 		}
-		//if (player.m_player.getGlobalBounds().intersects(maze.m_walls[i].getGlobalBounds()) == false && colliding == true)
-		//{
-		//	colliding = false;
-		//}
+		else if(!player.m_player.getGlobalBounds().intersects(maze.m_walls[i].getGlobalBounds()))
+		{
+			colliding = false;
+		}
 	}
 }
 

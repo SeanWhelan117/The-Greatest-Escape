@@ -7,7 +7,7 @@ Player::Player()
 
 	m_player.setTexture(m_playerTexture);
 
-	m_player.setPosition((Globals::SCREEN_X / 2), (Globals::SCREEN_Y - 150));
+	m_player.setPosition((Globals::SCREEN_X / 2), (Globals::SCREEN_Y - 25));
 	m_player.setOrigin((m_player.getGlobalBounds().width / 2), (m_player.getGlobalBounds().height / 2));
 	m_player.setScale(0.1f, 0.1f);
 	//std::cout << "player created" <<std::to_string(m_player.getOrigin().x) << " " << std::to_string(m_player.getOrigin().y) << std::endl;
@@ -26,6 +26,7 @@ void Player::loadAssets()
 void Player::update(const sf::RenderWindow& t_window, bool t_colliding)
 {
 	mousePos = sf::Mouse::getPosition(t_window);
+	//std::cout << mousePos.x << mousePos.y << std::endl;
 	rotatePlayer(mousePos);
 	checkForPlayerMovement(t_colliding);
 
@@ -60,37 +61,35 @@ void Player::checkForPlayerMovement(bool t_colliding)
 	
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
 		{
-			if (t_colliding == false)
-			{
-				m_player.move(0, -speed);
-			}
+			
+			m_player.move(0, -speed);
 			
 		}
 
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
 		{
-			if (t_colliding == false)
-			{
-				m_player.move(-speed, 0);
-			}
+			m_player.move(-speed, 0);
 		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
 		{
-			if (t_colliding == false)
-			{
-				m_player.move(0, speed);
-			}
+
+			m_player.move(0, speed);
 		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
 		{
-			if (t_colliding == false)
-			{
-				m_player.move(speed, 0);
-			}
+			m_player.move(speed, 0);
+		}
+
+		
+
+		if (t_colliding == true)
+		{
+			m_player.setPosition(lastPos);
+			t_colliding = false;
 		}
 
 	sprint();
-
+	lastPos = m_player.getPosition();
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

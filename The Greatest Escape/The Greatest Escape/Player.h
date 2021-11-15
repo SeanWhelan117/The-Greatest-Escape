@@ -39,5 +39,7 @@ private:
 	//takes damage away from the players health when they get hit
 	void takeDamage(int t_damageAmount);
 
+	sf::Vector2f lastPos;
+
 };
 
